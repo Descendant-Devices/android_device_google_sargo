@@ -15,4 +15,4 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/statix_sargo.mk \
+    $(LOCAL_DIR)/descendant_sargo.mk \

@@ -15,25 +15,24 @@
 #
 
 # inherit statix configs
-$(call inherit-product, $(TOP)/vendor/statix/config/common.mk)
-$(call inherit-product, $(TOP)/vendor/statix/config/gsm.mk)
+$(call inherit-product, $(TOP)/vendor/descendant/config/common_full_phone.mk)
+#$(call inherit-product, $(TOP)/vendor/statix/config/gsm.mk)
 
 # Inherit from the sargo aosp configuration
 $(call inherit-product, device/google/bonito/aosp_sargo.mk)
 
 PRODUCT_MANUFACTURER := Google
-PRODUCT_BRAND := Google
-PRODUCT_NAME := statix_sargo
+PRODUCT_BRAND := google
+PRODUCT_NAME := descendant_sargo
 PRODUCT_DEVICE := sargo
 PRODUCT_MODEL := Pixel 3a
+PRODUCT_RELEASE_NAME := sargo
 
-# Device fingerprint
+#PRIVATE_BUILD_DESC="sargo-user 9 PQ3B.190705.003 5622519 release-keys"
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    PRODUCT_NAME=sargo \
-    BUILD_FINGERPRINT=google/sargo/sargo:9/PQ3B.190705.003/5622519:user/release-keys \
-    PRIVATE_BUILD_DESC="sargo-user 9 PQ3B.190705.003 5622519 release-keys"
+    PRODUCT_NAME=sargo
+
+BUILD_FINGERPRINT := google/sargo/sargo:9/PQ3B.190705.003/5622519:user/release-keys
 
 $(call inherit-product-if-exists, vendor/google/sargo/sargo-vendor.mk)
 $(call inherit-product-if-exists, vendor/pixelgapps/pixel-gapps.mk)
-
-
